@@ -34,6 +34,8 @@ The spider is a browser overlay, not an operating-system desktop pet. It cannot 
 
 This is an open-source developer preview, not a promise of early alpha. A shortlist is a research lead, not proof of safety, originality or future returns.
 
+<p align="center"><img src="docs/field-guide.svg" alt="Four features: visible-post spider, source evidence, offline queue and local rules" width="100%"></p>
+
 ## What it does
 
 | Layer | Behavior |
@@ -47,6 +49,16 @@ This is an open-source developer preview, not a promise of early alpha. A shortl
 | Economy mode | No paid X API required to inspect the posts already visible in your browser; local rules work without Grok |
 
 **JEV is our own signal detector**, not an integration with an unnamed external JEV product. Grok uses the official xAI API; this repository is not an official X/xAI extension. Reading the current DOM is not an X firehose or a substitute for a licensed data service.
+
+## Pick your first adventure
+
+<p align="center"><img src="docs/research-modes.svg" alt="Three research modes: fictional playground, local feed scout and optional paid Grok review" width="100%"></p>
+
+- **🎨 Just look around:** launch the backend and open `/spider-demo` to meet the spider on fictional posts.
+- **🕷️ Explore your feed:** pair the extension, open X and release the spider on the active tab.
+- **🧠 Ask more questions:** add your own xAI key to enable the four Grok reviewers.
+- **📂 Bring existing research:** import JSON captures using the documented [data format](docs/DATA_FORMAT.md).
+- **🌱 Broaden the inputs:** run `python3 app.py --autopilot` for the Hacker News scanner and inbox watcher.
 
 ## Quick start
 
@@ -94,6 +106,39 @@ Reviews begin only after at least four distinct observed authors. One full revie
 Keys stay in the backend. Collected excerpts leave your computer **only when Grok is enabled**, sent to `api.x.ai` for analysis. Without a key, the UI shows local checks instead. An unavailable model, exhausted allowance, invalid response or invented citation cannot count as a pass. Model outputs cannot execute code, browse independently or control wallets.
 
 The Grok adapter is implemented and covered by mocked tests. A real paid Grok call has **not** been validated in this checkout because no xAI key was provided.
+
+## Follow a discovery
+
+<p align="center"><img src="docs/discovery-trail.svg" alt="Discovery pipeline: spot visible posts, group topics, explore links, question evidence and revisit findings" width="100%"></p>
+
+1. **Spot a recurring idea.** The spider captures rendered posts as you explore a visible X tab.
+2. **Connect the mentions.** JEV groups supported topics and project links, deduplicates captures and checks author diversity.
+3. **Read beyond the post.** The crawler retrieves bounded public pages to add context to the observed signal.
+4. **Challenge the story.** Local checks run first; optional Grok seats return separate reasons tied to supplied evidence.
+5. **Keep the trail.** Open the dashboard to review sources, inspect unknowns and export findings as JSON.
+
+*These illustrations explain the workflow; they are not screenshots or measured results.*
+
+## Your first research session
+
+- [ ] Start the local engine and open the dashboard.
+- [ ] Try the fictional spider demo before connecting a real feed.
+- [ ] Pair the extension from **Connections**.
+- [ ] Release the spider on an X feed, search or profile page.
+- [ ] Watch the capture counter; pause whenever you want.
+- [ ] Open a finding and read its linked sources.
+- [ ] Compare the available checks and explicitly unverified claims.
+- [ ] Export useful findings for your own follow-up research.
+
+## Keep the running cost small
+
+- **Begin without Grok.** Local grouping and checks do not require an xAI key.
+- **Reuse crawled pages.** The crawler caches pages for 30 minutes.
+- **Reuse model reviews.** Identical evidence/model inputs use a 24-hour review cache.
+- **Bound the model workload.** The default allowance is 12 requests per rolling 24 hours; each full review uses four.
+- **Choose when to collect.** Capture runs on the visible tab; auto-scroll is optional.
+
+Your computer, internet connection and any enabled paid services still have their own costs. Request limits do not guarantee a fixed API bill.
 
 ## A transparent pipeline
 

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="470" viewBox="0 0 1440 470" role="img" aria-label="From a passing post to a research trail.">
+<defs><linearGradient id="s"><stop stop-color="#ff88b8"/><stop offset=".3" stop-color="#ffc477"/><stop offset=".55" stop-color="#a4edb6"/><stop offset=".8" stop-color="#89d9ff"/><stop offset="1" stop-color="#bea5ff"/></linearGradient></defs>
+<rect width="1440" height="470" rx="32" fill="#141321"/><rect x="36" y="32" width="1368" height="4" rx="2" fill="url(#s)"/><g font-family="Arial,Helvetica,sans-serif">
+<text x="52" y="94" fill="#f8f3ff" font-size="36" font-weight="700">From a passing post to a research trail.</text>
+<text x="52" y="130" fill="#bab5cc" font-size="18" font-weight="400">Five steps. Sources stay attached all the way through.</text>
+<rect x="52" y="177" width="248" height="236" rx="22" fill="#201e31" stroke="#ff88b8" stroke-opacity=".5"/>
+<circle cx="100" cy="228" r="27" fill="#ff88b8"/>
+<text x="85" y="235" fill="#141321" font-size="20" font-weight="700">01</text>
+<text x="76" y="292" fill="#ff88b8" font-size="24" font-weight="700">SPOT</text>
+<text x="76" y="336" fill="#f8f3ff" font-size="21" font-weight="400">Visible posts</text>
+<text x="76" y="368" fill="#bab5cc" font-size="16" font-weight="400">Your active X tab</text>
+<path d="M302 286h19m-7-6 7 6-7 6" fill="none" stroke="#ff88b8" stroke-width="2"/>
+<rect x="324" y="177" width="248" height="236" rx="22" fill="#201e31" stroke="#ffc477" stroke-opacity=".5"/>
+<circle cx="372" cy="228" r="27" fill="#ffc477"/>
+<text x="357" y="235" fill="#141321" font-size="20" font-weight="700">02</text>
+<text x="348" y="292" fill="#ffc477" font-size="24" font-weight="700">GROUP</text>
+<text x="348" y="336" fill="#f8f3ff" font-size="21" font-weight="400">Recurring topics</text>
+<text x="348" y="368" fill="#bab5cc" font-size="16" font-weight="400">Local JEV detector</text>
+<path d="M574 286h19m-7-6 7 6-7 6" fill="none" stroke="#ffc477" stroke-width="2"/>
+<rect x="596" y="177" width="248" height="236" rx="22" fill="#201e31" stroke="#a4edb6" stroke-opacity=".5"/>
+<circle cx="644" cy="228" r="27" fill="#a4edb6"/>
+<text x="629" y="235" fill="#141321" font-size="20" font-weight="700">03</text>
+<text x="620" y="292" fill="#a4edb6" font-size="24" font-weight="700">EXPLORE</text>
+<text x="620" y="336" fill="#f8f3ff" font-size="21" font-weight="400">Public links</text>
+<text x="620" y="368" fill="#bab5cc" font-size="16" font-weight="400">Sites, repos and docs</text>
+<path d="M846 286h19m-7-6 7 6-7 6" fill="none" stroke="#a4edb6" stroke-width="2"/>
+<rect x="868" y="177" width="248" height="236" rx="22" fill="#201e31" stroke="#89d9ff" stroke-opacity=".5"/>
+<circle cx="916" cy="228" r="27" fill="#89d9ff"/>
+<text x="901" y="235" fill="#141321" font-size="20" font-weight="700">04</text>
+<text x="892" y="292" fill="#89d9ff" font-size="24" font-weight="700">QUESTION</text>
+<text x="892" y="336" fill="#f8f3ff" font-size="21" font-weight="400">Four perspectives</text>
+<text x="892" y="368" fill="#bab5cc" font-size="16" font-weight="400">Optional Grok review</text>
+<path d="M1118 286h19m-7-6 7 6-7 6" fill="none" stroke="#89d9ff" stroke-width="2"/>
+<rect x="1140" y="177" width="248" height="236" rx="22" fill="#201e31" stroke="#bea5ff" stroke-opacity=".5"/>
+<circle cx="1188" cy="228" r="27" fill="#bea5ff"/>
+<text x="1173" y="235" fill="#141321" font-size="20" font-weight="700">05</text>
+<text x="1164" y="292" fill="#bea5ff" font-size="24" font-weight="700">REVISIT</text>
+<text x="1164" y="336" fill="#f8f3ff" font-size="21" font-weight="400">Saved evidence</text>
+<text x="1164" y="368" fill="#bab5cc" font-size="16" font-weight="400">Your local dashboard</text>
+</g></svg>
