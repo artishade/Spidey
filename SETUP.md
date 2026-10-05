@@ -24,3 +24,8 @@ Browser captures are research-only unless you additionally set SPIDER_ALLOW_LAUN
 Pause queue stops new submissions but cannot cancel transactions already broadcast. Preserve SQLite, data/launch-jobs/ and all creator keys together for recovery. Pending outcomes block further allocations until reconciled. Do not remove history to force retries.
 
 The unsigned PumpPortal zero-buy construction was probed successfully; live token creation, Pinata publication and funded execution have not been end-to-end validated by this repository's tests.
+
+
+## Other launch platforms
+
+The built-in instructions above apply to `LAUNCH_PROVIDER=pumpportal`. To connect a different Solana launch platform through your own HTTPS adapter, see [Launch providers](docs/LAUNCH_PROVIDERS.md). Bridge mode does not require local Pinata or wallet credentials; signing and spending enforcement belong to the bridge.

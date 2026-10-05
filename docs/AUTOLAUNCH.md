@@ -74,3 +74,8 @@ npm audit
 - https://solana.com/docs/rpc/http/simulatetransaction
 - https://github.com/HackerNews/API
 - https://github.com/xdevplatform/samples/blob/main/python/posts/search_recent.py
+
+
+## Other launch platforms
+
+The built-in instructions above apply to `LAUNCH_PROVIDER=pumpportal`. To connect a different Solana launch platform through your own HTTPS adapter, see [Launch providers](LAUNCH_PROVIDERS.md). Bridge mode does not require local Pinata or wallet credentials; signing and spending enforcement belong to the bridge.

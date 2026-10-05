@@ -647,7 +647,7 @@ class Handler(BaseHTTPRequestHandler):
                                    'spider':JEV.status() if JEV else None,'pairing_code':EXTENSION_KEY,
                                    'grok':GROK.status() if GROK else None,
                                    'connections': {'x': bool(os.getenv('X_BEARER_TOKEN')) and os.getenv('ENABLE_PAID_X') == '1',
-                                                   'launch': 'Solana / Pump.fun · '+ (AUTO.mode() if AUTO else 'offline'),
+                                                   'launch': (AUTO.provider_status()['label'] + ' · ' + AUTO.mode()) if AUTO else 'offline',
                                                    'free_feed': os.getenv('FREE_FEED_ENABLED', '1') == '1'}})
         files = {'/': ('index.html', 'text/html; charset=utf-8'), '/app.js': ('app.js', 'text/javascript; charset=utf-8'), '/style.css': ('style.css', 'text/css; charset=utf-8')}
         files.update({'/spider-demo':('../docs/spider-demo.html','text/html; charset=utf-8'),

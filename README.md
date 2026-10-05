@@ -157,6 +157,18 @@ flowchart LR
 
 A browser token can only submit captures and read scanner status. It cannot launch tokens. The extension has no account-action code and no xAI API key. See [architecture](docs/ARCHITECTURE.md) and [privacy](docs/PRIVACY.md).
 
+## Connect your launch platform
+
+- **Built-in:** Pump.fun via the existing local PumpPortal executor.
+- **Bring your own:** connect a Solana platform through the new HTTPS launch-bridge protocol.
+- **Keep one queue:** provider selection preserves the five-attempt daily quota and narrative deduplication.
+- **Recover conservatively:** jobs pin their provider; uncertain submissions are polled without creating a replacement.
+- **Build an adapter:** a Python HTTPS + SQLite scaffold is included. Map its two hooks to your platform API.
+
+Select `LAUNCH_PROVIDER=pumpportal` or `bridge` in `.env`. An arbitrary platform website URL does not work: it needs a compatible adapter. External bridges manage their own signing and must enforce the requested 0.025 SOL cap; their results are reported, not independently verified by Gem Search. Other chains are not supported by the current SOL budget policy.
+
+**[Connection guide and API contract →](docs/LAUNCH_PROVIDERS.md)**
+
 ## Other sources and optional launch module
 
 - JSON import and `data/inbox/` support external collectors. See [data format](docs/DATA_FORMAT.md).

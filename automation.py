@@ -10,6 +10,7 @@ import struct
 import subprocess
 import time
 import zlib
+from launch_provider import configured_provider, bridge_missing, run_bridge
 
 CAP = 25_000_000
 DAILY_COUNT = 5
@@ -64,7 +65,20 @@ class Automation:
     def mode(self):
         return 'live' if os.getenv('LAUNCH_MODE') == 'live' else 'dry_run'
 
+    def provider_status(self):
+        try:
+            provider = configured_provider()
+            return {k: v for k, v in provider.items() if k != 'endpoint'}
+        except ValueError as error:
+            return {'kind': 'invalid', 'label': 'Not configured', 'error': str(error)}
+
     def missing(self):
+        try:
+            provider = configured_provider()
+        except ValueError as error:
+            return [str(error)]
+        if provider['kind'] == 'bridge':
+            return bridge_missing()
         missing = []
         if not os.getenv('PINATA_JWT'):
             missing.append('PINATA_JWT')
@@ -87,6 +101,10 @@ class Automation:
         basis = topic_key + ':' + evidence_ids if topic_key else project['url']
         fingerprint = hashlib.sha256(basis.encode()).hexdigest()
         mode = self.mode()
+        try:
+            provider = configured_provider()
+        except ValueError:
+            return False
         if topic_key:
             with self.connect() as con:
                 recent = con.execute('SELECT payload FROM launch_jobs WHERE mode=? AND created>?', (mode, time.time() - 7 * WINDOW))
@@ -102,7 +120,7 @@ class Automation:
                  'narrative': project['name'], 'source_url': project['url'], 'source': project['source'],
                  'topic': topic_key,
                  'created': time.time(), 'status': 'queued', 'amount': 0, 'priority_fee': .00001,
-                 'mode': mode, 'cap_sol': .025, 'image_base64': base64.b64encode(token_icon(identity)).decode()}
+                 'provider': provider, 'mode': mode, 'cap_sol': .025, 'image_base64': base64.b64encode(token_icon(identity)).decode()}
         with self.connect() as con:
             result = con.execute('INSERT OR IGNORE INTO launch_jobs VALUES (?,?,?,?,?,?,?)',
                                  (identity, mode + ':' + fingerprint, mode, time.time(), None, 'queued', json.dumps(draft)))
@@ -116,10 +134,12 @@ class Automation:
             for row in con.execute('SELECT * FROM launch_jobs ORDER BY created DESC LIMIT 100'):
                 item = json.loads(row['payload'])
                 item.pop('image_base64', None)
+                if 'provider' in item:
+                    item['provider'] = {k: v for k, v in item['provider'].items() if k != 'endpoint'}
                 item['status'] = row['status']
                 jobs.append(item)
             used = con.execute('SELECT COUNT(*) FROM launch_jobs WHERE mode=? AND reserved>?', (self.mode(), time.time() - WINDOW)).fetchone()[0]
-        return {'enabled': self.enabled, 'mode': self.mode(), 'max_sol': .025, 'daily_max': 5, 'used': used,
+        return {'provider': self.provider_status(), 'enabled': self.enabled, 'mode': self.mode(), 'max_sol': .025, 'daily_max': 5, 'used': used,
                 'reserved_sol': round(used * .025, 3), 'daily_sol': .125, 'window': 'rolling_24h',
                 'missing': self.missing(), 'error': self.error, 'jobs': jobs}
 
@@ -139,13 +159,13 @@ class Automation:
 
     def _tick(self):
         mode = self.mode()
-        if mode == 'live' and self.missing():
-            return
         with self.connect() as con:
             con.execute('BEGIN IMMEDIATE')
             # Reconcile previous attempt first. Unknown outcome blocks all new allocations.
             row = con.execute("SELECT * FROM launch_jobs WHERE mode=? AND status IN ('running','pending') ORDER BY reserved LIMIT 1", (mode,)).fetchone()
             if not row:
+                if mode == 'live' and self.missing():
+                    return
                 used = con.execute('SELECT COUNT(*) FROM launch_jobs WHERE mode=? AND reserved>?', (mode, time.time() - WINDOW)).fetchone()[0]
                 if used >= DAILY_COUNT:
                     return
@@ -157,6 +177,13 @@ class Automation:
             draft = json.loads(row['payload'])
         if mode == 'dry_run':
             result = {'status': 'dry_run_complete', 'reason': 'Offline rehearsal. No metadata upload, transaction, SOL cost or on-chain simulation.'}
+        elif draft.get('provider', {}).get('kind') == 'bridge':
+            def persist(value):
+                with self.connect() as con:
+                    con.execute('UPDATE launch_jobs SET payload=? WHERE id=?', (json.dumps(value), value['id']))
+            result = run_bridge(draft, persist)
+        elif draft.get('provider', {'kind': 'pumpportal'}).get('kind') != 'pumpportal':
+            result = {'status': 'pending', 'reason': 'Unknown pinned launch provider; execution stopped.'}
         else:
             try:
                 proc = subprocess.run(['node', str(self.root / 'launch/worker.mjs'), 'run'], input=json.dumps(draft),
