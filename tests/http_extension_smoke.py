@@ -30,6 +30,7 @@ with tempfile.TemporaryDirectory() as temp, patch.dict(os.environ,{'GROK_ENABLED
         assert req('/api/extension/status',key=app.EXTENSION_KEY)[0]==200
         assert req('/api/launch-control',{'enabled':True},app.EXTENSION_KEY)[0]==403
         assert req('/spider-demo')[0]==200
+        assert req('/capsule.js')[0]==200
         posts=[{'url':f'https://x.com/test{i}/status/{100+i}','text':f'AI agents experiment {i} version {i*19}',
                 'created_at':datetime.now(timezone.utc).isoformat(),'links':['https://example.com']} for i in range(5)]
         status,body=req('/api/extension/ingest',{'posts':posts},app.EXTENSION_KEY)

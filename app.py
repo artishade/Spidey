@@ -649,7 +649,7 @@ class Handler(BaseHTTPRequestHandler):
                                    'connections': {'x': bool(os.getenv('X_BEARER_TOKEN')) and os.getenv('ENABLE_PAID_X') == '1',
                                                    'launch': (AUTO.provider_status()['label'] + ' · ' + AUTO.mode()) if AUTO else 'offline',
                                                    'free_feed': os.getenv('FREE_FEED_ENABLED', '1') == '1'}})
-        files = {'/': ('index.html', 'text/html; charset=utf-8'), '/app.js': ('app.js', 'text/javascript; charset=utf-8'), '/style.css': ('style.css', 'text/css; charset=utf-8')}
+        files = {'/capsule.js': ('capsule.js', 'text/javascript; charset=utf-8'), '/': ('index.html', 'text/html; charset=utf-8'), '/app.js': ('app.js', 'text/javascript; charset=utf-8'), '/style.css': ('style.css', 'text/css; charset=utf-8')}
         files.update({'/spider-demo':('../docs/spider-demo.html','text/html; charset=utf-8'),
                       '/spider-demo.js':('../docs/spider-demo.js','text/javascript; charset=utf-8'),
                       '/spider-ui.js':('../extension/spider-ui.js','text/javascript; charset=utf-8')})

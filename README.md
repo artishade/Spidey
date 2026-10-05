@@ -50,6 +50,15 @@ This is an open-source developer preview, not a promise of early alpha. A shortl
 
 **JEV is our own signal detector**, not an integration with an unnamed external JEV product. Grok uses the official xAI API; this repository is not an official X/xAI extension. Reading the current DOM is not an X firehose or a substitute for a licensed data service.
 
+## ✦ Turn a finding into a keepsake
+
+Open a project in **Discovery**, click **Капсула находки**, choose **Aurora** or **Daylight**, and download a standalone SVG card. It captures mentions, observed authors, local check results, Grok status, up to three source addresses and a UTC timestamp. A rainbow spider signs the design.
+
+- Preview before downloading; the selected finding is frozen while the card is open.
+- Generated entirely in your browser, without an API call or automatic posting.
+- Demo findings remain visibly marked. Missing evidence stays missing.
+- Source addresses omit credentials, query strings and fragments; review the visible content before sharing.
+
 ## Pick your first adventure
 
 <p align="center"><img src="docs/research-modes.svg" alt="Three research modes: fictional playground, local feed scout and optional paid Grok review" width="100%"></p>
