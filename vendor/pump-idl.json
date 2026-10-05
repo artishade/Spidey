@@ -1,0 +1,206 @@
+{
+  "address": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+  "instructions": [
+    {
+      "name": "create",
+      "discriminator": [
+        24,
+        30,
+        200,
+        40,
+        5,
+        28,
+        7,
+        119
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "symbol",
+          "type": "string"
+        },
+        {
+          "name": "uri",
+          "type": "string"
+        },
+        {
+          "name": "creator",
+          "type": "pubkey"
+        }
+      ],
+      "accounts": [
+        {
+          "name": "mint",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "mint_authority"
+        },
+        {
+          "name": "bonding_curve",
+          "writable": true
+        },
+        {
+          "name": "associated_bonding_curve",
+          "writable": true
+        },
+        {
+          "name": "global"
+        },
+        {
+          "name": "mpl_token_metadata"
+        },
+        {
+          "name": "metadata",
+          "writable": true
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "associated_token_program"
+        },
+        {
+          "name": "rent"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ]
+    },
+    {
+      "name": "create_v2",
+      "discriminator": [
+        214,
+        144,
+        76,
+        236,
+        95,
+        139,
+        49,
+        180
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "symbol",
+          "type": "string"
+        },
+        {
+          "name": "uri",
+          "type": "string"
+        },
+        {
+          "name": "creator",
+          "type": "pubkey"
+        },
+        {
+          "name": "is_mayhem_mode",
+          "type": "bool"
+        },
+        {
+          "name": "is_cashback_enabled",
+          "type": {
+            "defined": {
+              "name": "OptionBool"
+            }
+          }
+        },
+        {
+          "name": "creator_fee_bps",
+          "type": {
+            "defined": {
+              "name": "OptionU64"
+            }
+          }
+        },
+        {
+          "name": "is_holder_reward",
+          "type": {
+            "defined": {
+              "name": "OptionBool"
+            }
+          }
+        }
+      ],
+      "accounts": [
+        {
+          "name": "mint",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "mint_authority"
+        },
+        {
+          "name": "bonding_curve",
+          "writable": true
+        },
+        {
+          "name": "associated_bonding_curve",
+          "writable": true
+        },
+        {
+          "name": "global"
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "associated_token_program"
+        },
+        {
+          "name": "mayhem_program_id",
+          "writable": true
+        },
+        {
+          "name": "global_params"
+        },
+        {
+          "name": "sol_vault",
+          "writable": true
+        },
+        {
+          "name": "mayhem_state",
+          "writable": true
+        },
+        {
+          "name": "mayhem_token_vault",
+          "writable": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ]
+    }
+  ]
+}

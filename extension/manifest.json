@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Gem Search — The Narrative Spider",
+  "version": "0.3.0",
+  "description": "A local-first spider that explores visible X posts, collects evidence and hands research leads to Grok.",
+  "permissions": ["activeTab", "scripting", "storage", "alarms"],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "background": {"service_worker": "background.js", "type": "module"},
+  "action": {"default_popup": "popup.html", "default_title": "Release your research spider"},
+  "icons": {"16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png"},
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'self'"}
+}
