@@ -1,14 +1,28 @@
-<p align="center"><img src="docs/banner.svg" alt="Gem Search — Your feed has a new inhabitant" width="100%"></p>
+<p align="center"><img src="docs/banner.svg" alt="Gem Search — a rainbow spider that follows the evidence" width="100%"></p>
 
 <p align="center">
   <a href="https://github.com/h100envy/gem-search/actions/workflows/ci.yml"><img src="https://github.com/h100envy/gem-search/actions/workflows/ci.yml/badge.svg" alt="Checks"></a>
-  <img src="https://img.shields.io/badge/Chrome-Manifest_V3-bbf77b?labelColor=182312" alt="Chrome Manifest V3">
-  <img src="https://img.shields.io/badge/local-first-bbf77b?labelColor=182312" alt="Local first">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-bbf77b?labelColor=182312" alt="MIT license"></a>
+  <img src="https://img.shields.io/badge/Chrome-Manifest_V3-ff95b1?labelColor=191922" alt="Chrome Manifest V3">
+  <img src="https://img.shields.io/badge/local-first-91e5c7?labelColor=191922" alt="Local first">
+  <img src="https://img.shields.io/badge/Grok-4_perspectives-bca4ff?labelColor=191922" alt="Four optional Grok reviewers">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-f1cf8a?labelColor=191922" alt="MIT license"></a>
 </p>
 
-<p align="center"><b>A small spider for your feed. A research pipeline behind it.</b><br>Observe → connect the dots → follow the evidence → challenge the thesis.</p>
+<h1 align="center">🕷️ Meet the curious side of your feed.</h1>
+<p align="center"><b>Your next research rabbit hole has eight legs.</b><br>A browser companion that turns the posts you see into questions worth asking.</p>
 <p align="center"><a href="#quick-start">Get started</a> · <a href="docs/README.ru.md">Русский</a> · <a href="docs/ARCHITECTURE.md">Architecture</a> · <a href="docs/PRIVACY.md">Privacy</a></p>
+
+<br>
+
+<table>
+<tr>
+<td width="33%" valign="top"><h3>🌈 A companion, with character</h3>A spider walks through your feed, pauses on a post and shows what it is investigating. You can see the work happening.</td>
+<td width="33%" valign="top"><h3>🔎 Every lead has a trail</h3>Posts, public links, checks and unknowns stay attached to the finding. Open the source. Challenge the conclusion.</td>
+<td width="33%" valign="top"><h3>🏡 Your computer is home</h3>The engine and database run locally. Add your own Grok key when you want model reviews. No hosted Gem Search account.</td>
+</tr>
+</table>
+
+<br>
 
 ## Meet your narrative spider
 
@@ -56,6 +70,8 @@ The local engine must stay running. If it is offline, up to 200 captured posts r
 **Try the spider without an X account:** open **http://127.0.0.1:8787/spider-demo**. It uses the same spider renderer over fictional cards, makes no API calls and collects nothing. The dashboard's **Demo scan** separately exercises the research pipeline with clearly marked synthetic projects.
 
 ## Give it four Grok perspectives
+
+<p align="center"><img src="docs/grok-seats.svg" alt="Lookout, Maker, Skeptic and Runner — four evidence-bound Grok reviewers" width="100%"></p>
 
 Add your key **locally** to `.env`, then restart the engine:
 
@@ -139,3 +155,7 @@ X markup changes. The extractor uses rendered `article[data-testid="tweet"]`, te
 The engine is local and single-user. Do not expose its port to the internet. Keys, wallet files, captured posts and SQLite are ignored by Git. Read [SECURITY.md](SECURITY.md) before changing trust boundaries.
 
 MIT · Independent project. Not affiliated with X, xAI, Pump.fun or PumpPortal.
+
+<br>
+<p align="center">🌸 🟠 🌼 🌿 🧊 🔮</p>
+<p align="center"><b>Keep the curiosity. Keep the receipts.</b><br><sub>If this little spider belongs in your feed, give it a star and help it grow.</sub></p>
