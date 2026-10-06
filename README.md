@@ -43,7 +43,7 @@ A narrative is most interesting **before it has a name**. Until now the spider s
 </tr>
 </table>
 
-**In Discovery:** filter by signal type, sort by **Быстрее растут**, **Новые сверху** or **Больше авторов**, and open the velocity panel on any lead.
+**In Discovery:** filter by signal type, sort by **Fastest growing**, **Newest first** or **Most authors**, and open the velocity panel on any lead.
 
 ### Try it in one minute
 
@@ -53,8 +53,8 @@ python3 scripts/sample_signals.py    # terminal 2: fictional sample posts
 ```
 
 1. Open **http://127.0.0.1:8787**, wait ~10 seconds for the spider loop.
-2. In **Discovery**, switch **Все типы** to **Тикеры $**, then **Новые нарративы**.
-3. Set the sort to **Быстрее растут**: `$WEBZ` and “rainbow spiders” jump to the top at ×9.
+2. In **Discovery**, switch **All types** to **Tickers $**, then **New narratives**.
+3. Set the sort to **Fastest growing**: `$WEBZ` and “rainbow spiders” jump to the top at ×9.
 4. Open a lead to see the **Signal velocity** panel, the posts behind it and the Solscan / X search link.
 
 The sample posts, handles, `$WEBZ` and the address are invented and marked `(sample)`. On a real feed the same leads appear from what the spider sees in your tabs.
@@ -98,7 +98,7 @@ This is an open-source developer preview, not a promise of early alpha. A shortl
 
 ## ✦ Turn a finding into a keepsake
 
-Open a project in **Discovery**, click **Капсула находки**, choose **Aurora** or **Daylight**, and download a standalone SVG card. It captures mentions, observed authors, local check results, Grok status, up to three source addresses and a UTC timestamp. A rainbow spider signs the design.
+Open a project in **Discovery**, click **Discovery capsule**, choose **Aurora** or **Daylight**, and download a standalone SVG card. It captures mentions, observed authors, local check results, Grok status, up to three source addresses and a UTC timestamp. A rainbow spider signs the design.
 
 - Preview before downloading; the selected finding is frozen while the card is open.
 - Generated entirely in your browser, without an API call or automatic posting.

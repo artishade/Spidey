@@ -10,10 +10,10 @@ test('capsule escapes untrusted text and excludes secrets and active content',()
 });
 test('demo cannot be presented as a real shortlist and Grok absence stays explicit',()=>{
  const result=svg({source:'demo',status:'shortlisted',votes:[]});
- assert.ok(result.includes('DEMO · ВЫМЫШЛЕННЫЙ ПРИМЕР'));
+ assert.ok(result.includes('DEMO · FICTIONAL EXAMPLE'));
  assert.ok(!result.includes('SHORTLIST'));
- assert.ok(result.includes('Grok: оценка отсутствует'));
- assert.ok(result.includes('Источники не приложены'));
+ assert.ok(result.includes('Grok: no review'));
+ assert.ok(result.includes('No sources attached'));
 });
 test('synthetic evidence, rejected status, time and missing metrics remain faithful',()=>{
  assert.ok(svg({evidence:{synthetic:true}}).includes('DEMO'));

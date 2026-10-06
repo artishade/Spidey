@@ -85,7 +85,7 @@ class Automation:
             missing.append('PINATA_JWT')
         wallet = Path(os.getenv('SOLANA_KEYPAIR_PATH', str(self.data / 'wallets/treasury.json')))
         if not wallet.is_file():
-            missing.append('кошелёк treasury')
+            missing.append('treasury wallet')
         if not (self.root / 'node_modules/@solana/web3.js').exists():
             missing.append('npm install')
         return missing

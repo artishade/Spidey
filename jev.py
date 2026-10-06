@@ -89,7 +89,7 @@ class Jev:
                 else:projects.append(candidate(group,kind,key,'spider-ca-'+key,f'{key[:4]}…{key[-4:]} / Solana address'))
         for phrase,group in emerging_phrases(posts):
             ident='spider-phrase-'+hashlib.sha256(phrase.encode()).hexdigest()[:12]
-            projects.append(candidate(group,'phrase',phrase,ident,f'«{phrase}» / emerging narrative'))
+            projects.append(candidate(group,'phrase',phrase,ident,f'“{phrase}” / emerging narrative'))
         # Strongest leads first, so the shared Grok allowance is spent on them.
         projects.sort(key=lambda p:(-p['score'],-p['signals']['authors'],-(p['signals']['growth'] or 0)))
         return projects
@@ -169,7 +169,7 @@ def velocity(group,now=None):
     recent=[p for p in group if now-p['timestamp']<WINDOW_RECENT]
     previous=[p for p in group if WINDOW_RECENT<=now-p['timestamp']<WINDOW_RECENT+WINDOW_PREVIOUS]
     growth=round((len(recent)/6)/(len(previous)/18),1) if previous else None
-    return {'recent':len(recent),'previous':len(previous),'growth':growth,'growth_window':'6ч к пред. 18ч',
+    return {'recent':len(recent),'previous':len(previous),'growth':growth,'growth_window':'6h vs prev 18h',
             'recent_authors':len({p['author'].lower() for p in recent}),
             'first_seen':min(p.get('captured_at',p['timestamp']) for p in group),
             'first_posted':min(p['timestamp'] for p in group)}

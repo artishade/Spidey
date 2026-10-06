@@ -458,7 +458,7 @@ def check_launch(identity):
             raise ValueError('Launch draft not found')
         result = json.loads(row['payload'])
         result['status'] = 'needs_connection'
-        result['result'] = 'Поля проверены. Автоматическая очередь запускается из shortlist, отдельно от ручных черновиков. Этот черновик не отправлен в сеть.'
+        result['result'] = 'Fields checked. The automatic queue launches from the shortlist, separately from manual drafts. This draft was not sent to the network.'
         con.execute('UPDATE launches SET payload=? WHERE id=?', (json.dumps(result), identity))
     return result
 
