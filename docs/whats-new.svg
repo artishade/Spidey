@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="780" viewBox="0 0 1440 780" role="img" aria-label="New in Gem Search: tickers, Solana addresses, emerging phrases and growth">
+<defs><linearGradient id="s"><stop stop-color="#ff88b8"/><stop offset=".3" stop-color="#ffc477"/><stop offset=".55" stop-color="#a4edb6"/><stop offset=".8" stop-color="#89d9ff"/><stop offset="1" stop-color="#bea5ff"/></linearGradient>
+<linearGradient id="bar" x1="0" y1="1" x2="0" y2="0"><stop stop-color="#89d9ff"/><stop offset="1" stop-color="#bea5ff"/></linearGradient>
+<pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#a5a2bf" opacity=".12"/></pattern></defs>
+<rect width="1440" height="780" rx="32" fill="#141321"/><rect width="1440" height="780" rx="32" fill="url(#dots)"/><rect x="36" y="32" width="1368" height="4" rx="2" fill="url(#s)"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<rect x="52" y="70" width="88" height="30" rx="15" fill="#2a2440" stroke="#5a4c80"/><text x="96" y="90" fill="#d9ccff" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="2">NEW</text>
+<text x="156" y="94" fill="#bab5cc" font-size="16" letter-spacing="2">EMERGING SIGNALS</text>
+<text x="52" y="160" fill="#f8f3ff" font-size="50" font-weight="700" letter-spacing="-1.5">The spider catches it <tspan fill="url(#s)">early.</tspan></text>
+<text x="52" y="202" fill="#bab5cc" font-size="20">Not just five topics anymore: tickers, contracts and brand-new phrases become leads, each with its own growth rate.</text>
+<rect x="52" y="246" width="318" height="250" rx="24" fill="#201e31" stroke="#2f2b45"/>
+<rect x="74" y="272" width="6" height="64" rx="3" fill="#ff88b8"/>
+<text x="96" y="288" fill="#ff88b8" font-size="12" letter-spacing="2" font-weight="700">01 / TICKERS</text>
+<text x="96" y="324" fill="#f8f3ff" font-size="26" font-weight="700">Cashtags</text>
+<text x="74" y="370" fill="#cfc9df" font-size="16">$WEBZ becomes its own lead.</text>
+<text x="74" y="394" fill="#8f8aa6" font-size="16">Majors, fiat and $100 are skipped.</text>
+<rect x="74" y="422" width="274" height="50" rx="14" fill="#16141f" stroke="#ff88b8" stroke-opacity=".45"/>
+<text x="92" y="454" fill="#ff88b8" font-size="20" font-weight="700" font-family="Menlo,Consolas,monospace">$WEBZ</text>
+<text x="330" y="453" fill="#8f8aa6" font-size="13" text-anchor="end">8 posts · 8 authors</text>
+<rect x="386" y="246" width="318" height="250" rx="24" fill="#201e31" stroke="#2f2b45"/>
+<rect x="408" y="272" width="6" height="64" rx="3" fill="#ffc477"/>
+<text x="430" y="288" fill="#ffc477" font-size="12" letter-spacing="2" font-weight="700">02 / CONTRACTS</text>
+<text x="430" y="324" fill="#f8f3ff" font-size="26" font-weight="700">Solana addresses</text>
+<text x="408" y="370" fill="#cfc9df" font-size="16">Only keys that decode to 32 bytes.</text>
+<text x="408" y="394" fill="#8f8aa6" font-size="16">Random long words never pass.</text>
+<rect x="408" y="422" width="274" height="50" rx="14" fill="#16141f" stroke="#ffc477" stroke-opacity=".45"/>
+<text x="426" y="454" fill="#ffc477" font-size="20" font-weight="700" font-family="Menlo,Consolas,monospace">6bLR…z8m5</text>
+<text x="664" y="453" fill="#8f8aa6" font-size="13" text-anchor="end">✓ valid address</text>
+<rect x="720" y="246" width="318" height="250" rx="24" fill="#201e31" stroke="#2f2b45"/>
+<rect x="742" y="272" width="6" height="64" rx="3" fill="#a4edb6"/>
+<text x="764" y="288" fill="#a4edb6" font-size="12" letter-spacing="2" font-weight="700">03 / NEW NARRATIVES</text>
+<text x="764" y="324" fill="#f8f3ff" font-size="26" font-weight="700">Emerging phrases</text>
+<text x="742" y="370" fill="#cfc9df" font-size="16">Same words, 3+ authors, last 6h,</text>
+<text x="742" y="394" fill="#8f8aa6" font-size="16">outside every known topic.</text>
+<rect x="742" y="422" width="274" height="50" rx="14" fill="#16141f" stroke="#a4edb6" stroke-opacity=".45"/>
+<text x="760" y="454" fill="#a4edb6" font-size="20" font-weight="700" font-family="Menlo,Consolas,monospace">“rainbow spiders”</text>
+<rect x="1054" y="246" width="318" height="250" rx="24" fill="#201e31" stroke="#2f2b45"/>
+<rect x="1076" y="272" width="6" height="64" rx="3" fill="#89d9ff"/>
+<text x="1098" y="288" fill="#89d9ff" font-size="12" letter-spacing="2" font-weight="700">04 / GROWTH</text>
+<text x="1098" y="324" fill="#f8f3ff" font-size="26" font-weight="700">Velocity</text>
+<text x="1076" y="370" fill="#cfc9df" font-size="16">Last 6h against the 18h before.</text>
+<text x="1076" y="394" fill="#8f8aa6" font-size="16">First seen, recent authors.</text>
+<rect x="1076" y="422" width="274" height="50" rx="14" fill="#16141f" stroke="#89d9ff" stroke-opacity=".45"/>
+<text x="1094" y="454" fill="#89d9ff" font-size="20" font-weight="700" font-family="Menlo,Consolas,monospace">×9 pace</text>
+<text x="1332" y="453" fill="#8f8aa6" font-size="13" text-anchor="end">6 vs 2 mentions</text>
+<rect x="52" y="532" width="1336" height="196" rx="24" fill="#1a1828" stroke="#2f2b45"/>
+<text x="84" y="578" fill="#bea5ff" font-size="12" letter-spacing="2" font-weight="700">HOW GROWTH IS READ</text>
+<text x="84" y="614" fill="#f8f3ff" font-size="24" font-weight="700">Quiet for 18 hours. Then everyone at once.</text>
+<text x="84" y="646" fill="#a9a4bd" font-size="16">Mentions per hour in the last 6h, divided by the pace of the 18h before.</text>
+<text x="84" y="672" fill="#a9a4bd" font-size="16">Sort Discovery by «Быстрее растут» to see it first.</text>
+<rect x="84" y="690" width="404" height="26" rx="13" fill="#2a1f27" stroke="#6b4a5a"/><text x="100" y="708" fill="#f0c2d3" font-size="12" letter-spacing="1">RESEARCH-ONLY · NEVER ENTERS THE LAUNCH QUEUE</text>
+<rect x="640" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="670" y="658" width="20" height="34" rx="5" fill="#3a3552"/>
+<rect x="700" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="730" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="760" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="790" y="658" width="20" height="34" rx="5" fill="#3a3552"/>
+<rect x="820" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="850" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="880" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="910" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="940" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="970" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="1000" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="1030" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="1060" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="1090" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="1120" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="1150" y="684" width="20" height="8" rx="5" fill="#3a3552"/>
+<rect x="1180" y="658" width="20" height="34" rx="5" fill="url(#bar)"/>
+<rect x="1210" y="658" width="20" height="34" rx="5" fill="url(#bar)"/>
+<rect x="1240" y="632" width="20" height="60" rx="5" fill="url(#bar)"/>
+<rect x="1270" y="632" width="20" height="60" rx="5" fill="url(#bar)"/>
+<rect x="1300" y="606" width="20" height="86" rx="5" fill="url(#bar)"/>
+<rect x="1330" y="580" width="20" height="112" rx="5" fill="url(#bar)"/>
+<path d="M640 704H1170" stroke="#4a4466" stroke-width="2"/><text x="640" y="724" fill="#7d7896" font-size="13">previous 18h · 2 mentions</text>
+<path d="M1180 704H1350" stroke="#89d9ff" stroke-width="2"/><text x="1180" y="724" fill="#89d9ff" font-size="13">last 6h · 6</text>
+<text x="1160" y="626" fill="url(#s)" font-size="56" font-weight="700" text-anchor="end">×9</text>
+</g></svg>

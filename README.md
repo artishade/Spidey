@@ -10,7 +10,7 @@
 
 <h1 align="center">🕷️ Meet the curious side of your feed.</h1>
 <p align="center"><b>Your next research rabbit hole has eight legs.</b><br>A browser companion that turns the posts you see into questions worth asking.</p>
-<p align="center"><a href="#quick-start">Get started</a> · <a href="docs/README.ru.md">Русский</a> · <a href="docs/ARCHITECTURE.md">Architecture</a> · <a href="docs/PRIVACY.md">Privacy</a></p>
+<p align="center"><a href="#-whats-new-the-spider-catches-it-early">What's new</a> · <a href="#quick-start">Get started</a> · <a href="docs/README.ru.md">Русский</a> · <a href="docs/ARCHITECTURE.md">Architecture</a> · <a href="docs/PRIVACY.md">Privacy</a></p>
 
 <br>
 
@@ -23,6 +23,52 @@
 </table>
 
 <br>
+
+## ✨ What's new: the spider catches it early
+
+<p align="center"><img src="docs/whats-new.svg" alt="Emerging signals: cashtags, Solana addresses, emerging phrases and growth" width="100%"></p>
+
+<!-- 🎬 Screen recording: drag the .mp4 into GitHub's README editor and keep the generated link on its own line here. -->
+
+A narrative is most interesting **before it has a name**. Until now the spider sorted everything into five fixed topics. Now it also notices the small, specific things that show up first, and tells you how fast they are moving.
+
+<table>
+<tr>
+<td width="50%" valign="top"><h3>💲 Tickers</h3>Every <code>$CASHTAG</code> in your captures becomes its own lead, with its own authors and posts. <code>$BTC</code>, <code>$SOL</code>, <code>$USDC</code>, other majors and prices like <code>$100</code> are skipped. One click opens a live X search.</td>
+<td width="50%" valign="top"><h3>🧾 Contracts</h3>Solana addresses are kept only when they decode to a real 32-byte key, so long random words never sneak in. One click opens the address on Solscan.</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><h3>🌱 New narratives</h3>Two-word phrases that <b>three or more different authors</b> repeated in the last 6 hours, outside every known topic. Overlapping wording from one sentence counts once.</td>
+<td width="50%" valign="top"><h3>📈 Growth</h3>Each lead shows mentions in the last 6h against the pace of the 18h before, authors in the last 6h, and when the spider first saw it. Quiet for a day, then everyone at once: that is the ×9.</td>
+</tr>
+</table>
+
+**In Discovery:** filter by signal type, sort by **Быстрее растут**, **Новые сверху** or **Больше авторов**, and open the velocity panel on any lead.
+
+### Try it in one minute
+
+```sh
+python3 app.py                       # terminal 1: the local engine
+python3 scripts/sample_signals.py    # terminal 2: fictional sample posts
+```
+
+1. Open **http://127.0.0.1:8787**, wait ~10 seconds for the spider loop.
+2. In **Discovery**, switch **Все типы** to **Тикеры $**, then **Новые нарративы**.
+3. Set the sort to **Быстрее растут**: `$WEBZ` and “rainbow spiders” jump to the top at ×9.
+4. Open a lead to see the **Signal velocity** panel, the posts behind it and the Solscan / X search link.
+
+The sample posts, handles, `$WEBZ` and the address are invented and marked `(sample)`. On a real feed the same leads appear from what the spider sees in your tabs.
+
+### Bring your own topics
+
+Copy `topics.example.json` to `topics.json`, edit the patterns (up to 40 topics, case-insensitive regular expressions) and restart. A broken file is ignored with a warning and the built-in topics stay active. `topics.json` stays on your machine.
+
+### Same rules as before
+
+- **Research-only.** Tickers, addresses and phrases never enter the launch queue, even with `SPIDER_ALLOW_LAUNCH=1`. They belong to other people.
+- **Local.** Detection runs inside the engine on your computer. No new API calls, no new keys.
+- **Bounded.** Up to 10 tickers, 10 addresses and 5 phrases per pass, strongest first, so the Grok allowance goes to the best leads.
+- **Honest.** Growth describes your browsing sample, not all of X. Three coordinated accounts can fake a phrase; a cashtag is a lead, not a verified token.
 
 ## Meet your narrative spider
 
@@ -49,25 +95,6 @@ This is an open-source developer preview, not a promise of early alpha. A shortl
 | Economy mode | No paid X API required to inspect the posts already visible in your browser; local rules work without Grok |
 
 **JEV is our own signal detector**, not an integration with an unnamed external JEV product. Grok uses the official xAI API; this repository is not an official X/xAI extension. Reading the current DOM is not an X firehose or a substitute for a licensed data service.
-
-## 🌱 Catch it while it's small
-
-A narrative is most interesting before it has a name. JEV now looks past its topic list:
-
-| Signal | What becomes a lead |
-| --- | --- |
-| **Tickers** | `$CASHTAGS` seen in captured posts. Majors and fiat such as `$BTC`, `$SOL`, `$USDC` are ignored, and so are prices like `$100` |
-| **Contracts** | Solana addresses, kept only when they decode to a real 32-byte key |
-| **New narratives** | Two-word phrases repeated by at least three distinct authors in the last 6 hours that fall outside every known topic |
-| **Growth** | Every spider lead shows mentions in the last 6h against the pace of the 18h before, authors in the last 6h, and when the spider first saw it |
-
-Up to ten tickers, ten addresses and five phrases are kept per pass, strongest first, so the Grok allowance goes to the best leads. In **Discovery**, filter by signal type and sort by **Быстрее растут**, **Новые сверху** or **Больше авторов**. Tickers open a live X search, addresses open Solscan, both only on click.
-
-Tickers, addresses and phrases are **research-only**: they never enter the launch queue, even with `SPIDER_ALLOW_LAUNCH=1`. They belong to other people.
-
-**Your own topics.** Copy `topics.example.json` to `topics.json` and edit the patterns (up to 40 topics, case-insensitive regular expressions). Restart the engine. A broken file is ignored with a warning and the built-in topics stay active. `topics.json` is local and ignored by Git.
-
-The growth number describes your own browsing sample, not the whole of X.
 
 ## ✦ Turn a finding into a keepsake
 

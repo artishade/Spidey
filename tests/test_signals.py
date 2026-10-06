@@ -90,5 +90,13 @@ class SignalTests(unittest.TestCase):
         example=Path(__file__).resolve().parents[1]/'topics.example.json'
         self.assertIn('depin',automation.load_topics(example))
 
+    def test_sample_script_produces_every_signal_type(self):
+        sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
+        import sample_signals
+        self.assertTrue(jev.is_solana_address(sample_signals.sample_address()))
+        self.jev.ingest({'posts':sample_signals.sample_posts()})
+        kinds={p.get('kind') for p in self.jev.narratives()}
+        self.assertEqual(kinds,{'topic','ticker','contract','phrase'})
+
 
 if __name__=='__main__':unittest.main()
