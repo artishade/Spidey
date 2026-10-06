@@ -1,0 +1,8 @@
+{
+  "agents": "\\b(agent[s]?|agentic|llm|language model|агент\\w*|нейросет\\w*)\\b",
+  "robotics": "\\b(robot[s]?|robotics|humanoid|drone[s]?|робот\\w*|дрон\\w*)\\b",
+  "privacy": "\\b(privacy|encryption|zero.knowledge|приватност\\w*|шифрован\\w*)\\b",
+  "devtools": "\\b(compiler|debugger|developer tool|database|open.source|компилятор\\w*)\\b",
+  "science": "\\b(fusion|quantum|telescope|spacecraft|satellite|квантов\\w*|телескоп\\w*)\\b",
+  "depin": "\\b(depin|gpu marketplace|compute network|hotspot[s]?)\\b"
+}

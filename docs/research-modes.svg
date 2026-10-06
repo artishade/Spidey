@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="510" viewBox="0 0 1440 510" role="img" aria-label="Choose how far your curiosity goes.">
+<defs><linearGradient id="s"><stop stop-color="#ff88b8"/><stop offset=".3" stop-color="#ffc477"/><stop offset=".55" stop-color="#a4edb6"/><stop offset=".8" stop-color="#89d9ff"/><stop offset="1" stop-color="#bea5ff"/></linearGradient></defs>
+<rect width="1440" height="510" rx="32" fill="#141321"/><rect x="36" y="32" width="1368" height="4" rx="2" fill="url(#s)"/><g font-family="Arial,Helvetica,sans-serif">
+<text x="52" y="94" fill="#f8f3ff" font-size="36" font-weight="700">Choose how far your curiosity goes.</text>
+<text x="52" y="130" fill="#bab5cc" font-size="18" font-weight="400">Three research modes. You control when an external model joins in.</text>
+<rect x="52" y="177" width="432" height="274" rx="24" fill="#201e31" stroke="#ff88b8" stroke-opacity=".45"/>
+<text x="78" y="221" fill="#ff88b8" font-size="15" font-weight="700">EXPLORE THE DEMO</text>
+<text x="78" y="271" fill="#f8f3ff" font-size="29" font-weight="700">PLAYGROUND</text>
+<text x="78" y="322" fill="#d4cfe2" font-size="19" font-weight="400">Fictional posts, real spider renderer.</text>
+<text x="78" y="356" fill="#d4cfe2" font-size="19" font-weight="400">Preview the companion locally.</text>
+<text x="78" y="390" fill="#d4cfe2" font-size="19" font-weight="400">No account or API call needed.</text>
+<rect x="508" y="177" width="432" height="274" rx="24" fill="#201e31" stroke="#a4edb6" stroke-opacity=".45"/>
+<text x="534" y="221" fill="#a4edb6" font-size="15" font-weight="700">BRING YOUR OWN FEED</text>
+<text x="534" y="271" fill="#f8f3ff" font-size="29" font-weight="700">LOCAL SCOUT</text>
+<text x="534" y="322" fill="#d4cfe2" font-size="19" font-weight="400">Capture posts visible in your tab.</text>
+<text x="534" y="356" fill="#d4cfe2" font-size="19" font-weight="400">Group topics and crawl public links.</text>
+<text x="534" y="390" fill="#d4cfe2" font-size="19" font-weight="400">Keep research in local SQLite.</text>
+<rect x="964" y="177" width="432" height="274" rx="24" fill="#201e31" stroke="#bea5ff" stroke-opacity=".45"/>
+<text x="990" y="221" fill="#bea5ff" font-size="15" font-weight="700">ADD FOUR PERSPECTIVES</text>
+<text x="990" y="271" fill="#f8f3ff" font-size="29" font-weight="700">GROK REVIEW</text>
+<text x="990" y="322" fill="#d4cfe2" font-size="19" font-weight="400">Use your own xAI API key.</text>
+<text x="990" y="356" fill="#d4cfe2" font-size="19" font-weight="400">Send bounded evidence excerpts.</text>
+<text x="990" y="390" fill="#d4cfe2" font-size="19" font-weight="400">Cache reviews and limit requests.</text>
+</g></svg>

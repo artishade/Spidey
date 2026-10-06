@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="620" viewBox="0 0 1440 620" role="img" aria-label="Small footprints. Useful discoveries.">
+<defs><linearGradient id="s"><stop stop-color="#ff88b8"/><stop offset=".3" stop-color="#ffc477"/><stop offset=".55" stop-color="#a4edb6"/><stop offset=".8" stop-color="#89d9ff"/><stop offset="1" stop-color="#bea5ff"/></linearGradient></defs>
+<rect width="1440" height="620" rx="32" fill="#141321"/><rect x="36" y="32" width="1368" height="4" rx="2" fill="url(#s)"/><g font-family="Arial,Helvetica,sans-serif">
+<text x="52" y="94" fill="#f8f3ff" font-size="36" font-weight="700">Small footprints. Useful discoveries.</text>
+<text x="52" y="130" fill="#bab5cc" font-size="18" font-weight="400">A companion in your browser, with a research engine on your computer.</text>
+<rect x="52" y="173" width="660" height="178" rx="24" fill="#201e31"/>
+<rect x="74" y="198" width="6" height="126" rx="3" fill="#ff88b8"/>
+<text x="104" y="225" fill="#ff88b8" font-size="26" font-weight="700">A spider with a pause button</text>
+<text x="104" y="269" fill="#f8f3ff" font-size="21" font-weight="400">Walks between visible posts.</text>
+<text x="104" y="302" fill="#bab5cc" font-size="19" font-weight="400">Highlight, count, pause or dismiss.</text>
+<rect x="736" y="173" width="660" height="178" rx="24" fill="#201e31"/>
+<rect x="758" y="198" width="6" height="126" rx="3" fill="#ffc477"/>
+<text x="788" y="225" fill="#ffc477" font-size="26" font-weight="700">Evidence you can open</text>
+<text x="788" y="269" fill="#f8f3ff" font-size="21" font-weight="400">Keep links beside each finding.</text>
+<text x="788" y="302" fill="#bab5cc" font-size="19" font-weight="400">Inspect the sources and unknowns.</text>
+<rect x="52" y="375" width="660" height="178" rx="24" fill="#201e31"/>
+<rect x="74" y="400" width="6" height="126" rx="3" fill="#a4edb6"/>
+<text x="104" y="427" fill="#a4edb6" font-size="26" font-weight="700">A queue that remembers</text>
+<text x="104" y="471" fill="#f8f3ff" font-size="21" font-weight="400">Up to 200 captures while offline.</text>
+<text x="104" y="504" fill="#bab5cc" font-size="19" font-weight="400">Forwarded on the next connection.</text>
+<rect x="736" y="375" width="660" height="178" rx="24" fill="#201e31"/>
+<rect x="758" y="400" width="6" height="126" rx="3" fill="#89d9ff"/>
+<text x="788" y="427" fill="#89d9ff" font-size="26" font-weight="700">Start with local rules</text>
+<text x="788" y="471" fill="#f8f3ff" font-size="21" font-weight="400">No model key needed to begin.</text>
+<text x="788" y="504" fill="#bab5cc" font-size="19" font-weight="400">Add Grok when you want reviews.</text>
+</g></svg>
