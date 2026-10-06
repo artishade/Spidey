@@ -257,7 +257,7 @@ grok.py              Four optional API reviewers + persistent request allowance
 app.py               Local HTTP engine, crawler, dashboard and capture worker
 static/              Research dashboard
 docs/                Architecture, privacy, preview and launch documentation
-scripts/             Icon generation and explicit-allowlist ZIP packaging
+scripts/             Icon generation, ZIP packaging, sample signals and terminal walkthrough
 automation.py        Optional durable launch queue
 launch/              Optional isolated-wallet Solana executor
 tests/               Offline tests and unsigned provider fixture
