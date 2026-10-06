@@ -49,8 +49,10 @@ A narrative is most interesting **before it has a name**. Until now the spider s
 
 ```sh
 python3 app.py                       # terminal 1: the local engine
-python3 scripts/sample_signals.py    # terminal 2: fictional sample posts
+python3 scripts/spider_demo.py       # terminal 2: stream fictional sample posts with live logs
 ```
+
+The walkthrough sends each post through the extension API and prints what the real engine reports back: captures, engine events, every lead with its growth and four checks. Use `scripts/sample_signals.py` instead for a silent load, or `--speed 2` for a faster run.
 
 1. Open **http://127.0.0.1:8787**, wait ~10 seconds for the spider loop.
 2. In **Discovery**, switch **All types** to **Tickers $**, then **New narratives**.
