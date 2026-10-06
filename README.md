@@ -41,7 +41,7 @@ This is an open-source developer preview, not a promise of early alpha. A shortl
 | Layer | Behavior |
 | --- | --- |
 | 🕷 Spider | Animated overlay, current-post highlight, capture counters, pause/dismiss, optional visible-tab auto-scroll |
-| JEV | Local post deduplication, topic grouping, author diversity and repeated-text checks; English and Russian topic keywords |
+| JEV | Local post deduplication, topic grouping, cashtags, Solana addresses, emerging phrases, 6h growth, author diversity and repeated-text checks; editable English/Russian topics |
 | Crawler | Follows bounded public HTTP(S) links; caches pages for 30 minutes; blocks private-network targets |
 | Grok seats | Four actual API requests with role-specific prompts, structured output and evidence references; optional |
 | Dashboard | Filterable projects/narratives, local checks, Grok reasons, sources, persistent activity log and JSON export |
@@ -49,6 +49,25 @@ This is an open-source developer preview, not a promise of early alpha. A shortl
 | Economy mode | No paid X API required to inspect the posts already visible in your browser; local rules work without Grok |
 
 **JEV is our own signal detector**, not an integration with an unnamed external JEV product. Grok uses the official xAI API; this repository is not an official X/xAI extension. Reading the current DOM is not an X firehose or a substitute for a licensed data service.
+
+## 🌱 Catch it while it's small
+
+A narrative is most interesting before it has a name. JEV now looks past its topic list:
+
+| Signal | What becomes a lead |
+| --- | --- |
+| **Tickers** | `$CASHTAGS` seen in captured posts. Majors and fiat such as `$BTC`, `$SOL`, `$USDC` are ignored, and so are prices like `$100` |
+| **Contracts** | Solana addresses, kept only when they decode to a real 32-byte key |
+| **New narratives** | Two-word phrases repeated by at least three distinct authors in the last 6 hours that fall outside every known topic |
+| **Growth** | Every spider lead shows mentions in the last 6h against the pace of the 18h before, authors in the last 6h, and when the spider first saw it |
+
+Up to ten tickers, ten addresses and five phrases are kept per pass, strongest first, so the Grok allowance goes to the best leads. In **Discovery**, filter by signal type and sort by **Быстрее растут**, **Новые сверху** or **Больше авторов**. Tickers open a live X search, addresses open Solscan, both only on click.
+
+Tickers, addresses and phrases are **research-only**: they never enter the launch queue, even with `SPIDER_ALLOW_LAUNCH=1`. They belong to other people.
+
+**Your own topics.** Copy `topics.example.json` to `topics.json` and edit the patterns (up to 40 topics, case-insensitive regular expressions). Restart the engine. A broken file is ignored with a warning and the built-in topics stay active. `topics.json` is local and ignored by Git.
+
+The growth number describes your own browsing sample, not the whole of X.
 
 ## ✦ Turn a finding into a keepsake
 
@@ -203,7 +222,8 @@ Tests cover capture validation, route exclusions, deduplication, narratives, Gro
 
 ```text
 extension/           Manifest V3 popup, worker, extractor and animated spider
-jev.py               Local topic and project signal detector
+jev.py               Local topics, tickers, addresses, emerging phrases, growth
+topics.example.json  Template for your own local topic list
 grok.py              Four optional API reviewers + persistent request allowance
 app.py               Local HTTP engine, crawler, dashboard and capture worker
 static/              Research dashboard
@@ -216,7 +236,7 @@ tests/               Offline tests and unsigned provider fixture
 
 ## Limits worth understanding
 
-X markup changes. The extractor uses rendered `article[data-testid="tweet"]`, text, timestamp permalinks and visible external anchors. Shortened `t.co` links aren't treated as verified project sites. Topic discovery uses a small, inspectable taxonomy; it can miss new memes, sarcasm and novel projects. A linked repository isn't proof of a functioning product. No model here detects every scam or bot ring.
+X markup changes. The extractor uses rendered `article[data-testid="tweet"]`, text, timestamp permalinks and visible external anchors. Shortened `t.co` links aren't treated as verified project sites. Topic discovery uses a small, inspectable taxonomy that you can replace with `topics.json`. Emerging-phrase detection catches repeated wording, not meaning: it can miss memes spelled differently, sarcasm and novel projects, and three coordinated accounts can fake a phrase. A cashtag or address is a lead, not a verified token. A linked repository isn't proof of a functioning product. No model here detects every scam or bot ring.
 
 The engine is local and single-user. Do not expose its port to the internet. Keys, wallet files, captured posts and SQLite are ignored by Git. Read [SECURITY.md](SECURITY.md) before changing trust boundaries.
 

@@ -16,6 +16,8 @@ The extension currently expects the engine at `http://127.0.0.1:8787`. A custom 
 
 The crawler is bounded to three pages per project, standard HTTP(S) ports and capped page sizes. Every DNS result must be globally routable; the TCP connection is pinned to a validated IP and TLS still verifies the requested hostname. Redirects re-enter validation. JavaScript is not executed. A page's content is evidence, never code or instructions.
 
+Besides topics (built-in or a local `topics.json`), each pass extracts cashtags, Solana addresses that decode to 32 bytes, and two-word phrases repeated by at least three distinct authors in the last six hours outside the known topics. Every spider lead carries a 6h-versus-previous-18h growth rate and a first-seen time. Ticker, address and phrase leads are marked `research_only`, and the launch queue refuses them.
+
 Four local checks always retain their own explanations. Optional Grok reviews are attached separately, and a missing/negative Grok review prevents an otherwise-positive candidate from becoming approved when Grok mode is enabled. A scan-wide mutex limits concurrent batches. HN is a separately labeled source with different explicit scoring rules.
 
 ## Grok boundary

@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 import struct
 import subprocess
+import sys
 import time
 import zlib
 from launch_provider import configured_provider, bridge_missing, run_bridge
@@ -90,7 +91,8 @@ class Automation:
         return missing
 
     def enqueue(self, project):
-        if project['source'] == 'demo' or project['status'] != 'shortlisted':
+        # Tickers, contract addresses and emerging phrases belong to other people: research only.
+        if project['source'] == 'demo' or project['status'] != 'shortlisted' or project.get('research_only'):
             return False
         updated = project.get('observed_at', time.time())
         if time.time() - updated > WINDOW or updated > time.time() + 300:
@@ -203,13 +205,38 @@ class Automation:
             self.event(f"AUTO {mode}: {draft['name']} → {result['status']}")
 
 
-TOPICS = {
+DEFAULT_TOPICS = {
     'agents': r'\b(agent[s]?|agentic|llm|language model|artificial intelligence|агент\w*|нейросет\w*|искусственн\w+ интеллект\w*)\b',
     'robotics': r'\b(robot[s]?|robotics|humanoid|drone[s]?|робот\w*|дрон\w*)\b',
     'privacy': r'\b(privacy|encryption|zero.knowledge|cryptography|приватност\w*|шифрован\w*|криптограф\w*)\b',
     'devtools': r'\b(compiler|debugger|developer tool|database|open.source|компилятор\w*|отладчик\w*|открыт\w+ код\w*)\b',
     'science': r'\b(fusion|quantum|telescope|spacecraft|satellite|квантов\w*|телескоп\w*|спутник\w*)\b',
 }
+
+
+def load_topics(path):
+    """Local topics.json replaces the built-in taxonomy; an invalid file never breaks the engine."""
+    if not path.is_file():
+        return dict(DEFAULT_TOPICS)
+    try:
+        data = json.loads(path.read_text())
+        if not isinstance(data, dict) or not 1 <= len(data) <= 40:
+            raise ValueError('expected an object with 1-40 topics')
+        topics = {}
+        for name, regex in data.items():
+            if not isinstance(name, str) or not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,23}', name):
+                raise ValueError(f'invalid topic name {name!r}')
+            if not isinstance(regex, str) or not 1 <= len(regex) <= 600:
+                raise ValueError(f'invalid pattern for {name}')
+            re.compile(regex, re.I)
+            topics[name] = regex
+        return topics
+    except (ValueError, re.error) as exc:
+        print(f'topics.json ignored, using built-in topics: {exc}', file=sys.stderr)
+        return dict(DEFAULT_TOPICS)
+
+
+TOPICS = load_topics(Path(__file__).resolve().parent / 'topics.json')
 
 
 def discover_free(engine, fetch):

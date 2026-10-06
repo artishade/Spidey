@@ -16,3 +16,4 @@ data/wallets/
 data/*.lock
 data/launch-paused
 data/*.pid
+topics.json
