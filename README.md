@@ -125,16 +125,17 @@ Python **3.11+**, Chrome/Chromium. Backend: macOS, Linux, or Windows through WSL
 git clone https://github.com/h100envy/gem-search.git
 cd gem-search
 cp .env.example .env
-python3 app.py
+python3 app.py   # optional: only for the local engine mode below
 ```
 
-1. Open **http://127.0.0.1:8787**. Visit **Connections** and copy the local pairing code.
-2. Open **chrome://extensions**, enable **Developer mode**, click **Load unpacked**, select this repository's **extension/** directory.
-3. Open the Gem Search toolbar popup, paste the pairing code and click **Connect**.
-4. Open an X feed, search or profile page. Click **Release spider on this tab**.
-5. Scroll normally, or opt into auto-scroll. The spider only inspects rendered posts in the visible viewport. Pause or dismiss it at any time.
+1. Open **chrome://extensions**, enable **Developer mode**, click **Load unpacked**, select this repository's **extension/** directory.
+2. Open the Gem Search popup → **AI providers ↗** and add any OpenAI-compatible API — xAI, OpenAI, OpenRouter, Gemini, or a local Ollama. The key is stored only in `chrome.storage.local` on this device.
+3. Open an X feed, search or profile page. Click **Release spider on this tab**.
+4. Scroll normally, or opt into auto-scroll. The spider only inspects rendered posts in the visible viewport. Pause or dismiss it at any time.
 
-The local engine must stay running. If it is offline, up to 200 captured posts remain in the extension queue. The next successful connection forwards them. Background tabs do not collect or auto-scroll.
+That is the whole setup — no hosting and no running server. Captures are analysed **inside the browser**: topic, cashtag, Solana-contract and emerging-phrase detection run locally, and the four reviewers (Lookout, Maker, Skeptic, Runner) call your provider directly. Without a provider the spider still builds local research leads.
+
+**Optional local engine:** for link crawls and shared Grok seats, run `python3 app.py`, copy the pairing code from **http://127.0.0.1:8787** → **Connections**, and connect it under the popup's **Advanced** section. A paired engine forwards captures to Python; if it goes offline, up to 200 captured posts wait in the extension queue and forward on reconnect. Background tabs do not collect or auto-scroll.
 
 **Try the spider without an X account:** open **http://127.0.0.1:8787/spider-demo**. It uses the same spider renderer over fictional cards, makes no API calls and collects nothing. The dashboard's **Demo scan** separately exercises the research pipeline with clearly marked synthetic projects.
 

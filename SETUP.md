@@ -2,6 +2,10 @@
 
 For the browser spider, follow the quick start in [README.md](README.md). No wallet, Pinata account or npm build is required for browser research.
 
+## Standalone extension mode (v0.4+)
+
+The extension no longer needs the Python engine. Load `extension/` unpacked, open the popup → **AI providers ↗**, and add any OpenAI-compatible endpoint (xAI, OpenAI, OpenRouter, Gemini, or a local Ollama). Captures are analysed in the browser, reviews call your provider directly, and the API key stays in `chrome.storage.local`. Chrome asks once for permission to reach the provider's address. The pairing flow remains available under the popup's **Advanced** section for the full engine pipeline.
+
 ## Optional Grok
 
 Copy `.env.example` to `.env`, then set GROK_ENABLED=1 and XAI_API_KEY locally. Restart Python. The default request limit is 12 per rolling day, shared by the four reviewers. Do not paste API keys into issues or chat messages.
